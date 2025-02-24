@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+    margin: 20px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Styles */
+form input, form select, form button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+form input:focus, form select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+form button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Task List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+/* Button Styles */
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"] {
+    background-color: #2ecc71;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+button[type="submit"][formaction*="delete"] {
+    background-color: #e74c3c;
+}
+
+button[type="submit"][formaction*="delete"]:hover {
+    background-color: #c0392b;
+}
+
+/* Priority Colors */
+li[data-priority="High"] {
+    border-left: 4px solid #e67e22;
+}
+
+li[data-priority="Urgent"] {
+    border-left: 4px solid #e74c3c;
+}
+
+li[data-priority="Normal"] {
+    border-left: 4px solid #3498db;
+}
+.delete[type="submit"]{
+    background-color: red;
+}
