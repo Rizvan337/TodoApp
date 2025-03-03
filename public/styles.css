@@ -82,9 +82,11 @@ li:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* New Completed Task Style */
 .completed {
-    text-decoration: line-through;
-    color: #95a5a6;
+    background-color: #e6ffe6; /* Light green background */
+    opacity: 0.8; /* Slightly faded effect */
+    transition: all 0.5s ease-in-out;
 }
 
 /* Button Styles */
@@ -114,6 +116,11 @@ button[type="submit"][formaction*="delete"]:hover {
     background-color: #c0392b;
 }
 
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
 /* Priority Colors */
 li[data-priority="High"] {
     border-left: 4px solid #e67e22;
@@ -126,6 +133,30 @@ li[data-priority="Urgent"] {
 li[data-priority="Normal"] {
     border-left: 4px solid #3498db;
 }
-.delete[type="submit"]{
-    background-color: red;
+/* Urgent Task Styling */
+.urgent-badge {
+    background-color: #e74c3c;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+li[data-priority="Urgent"] {
+    border-left: 6px solid #e74c3c; 
+    background-color: #ffe6e6; }
+
+/* Task List Layout */
+.task-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
 }

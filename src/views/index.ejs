@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,15 +14,19 @@
             <input type="text" name="description" placeholder="Task description" required>
             <select name="priority">
                 <option value="Normal">Normal</option>
-                <option value="High">High</option>
                 <option value="Urgent">Urgent</option>
             </select>
             <button type="submit">Add Task</button>
         </form>
-        <ul>
+        <!-- <ul>
             <% tasks.forEach(task => { %>
-                <li class="<%= task.isCompleted() ? 'completed' : '' %>">
+                <li class="<%= task.isCompleted() ? 'completed' : '' %>" data-priority="<%= task.priority %>">
+                    <div class="task-info">
+                        <% if (task.priority === 'Urgent') { %>
+                            <span class="urgent-badge">URGENT</span>
+                        <% } %>
                     <%= task.getDetails() %>
+                    
                     <form action="/complete/<%= task.getId() %>" method="POST">
                         <button type="submit">Complete</button>
                     </form>
@@ -33,7 +37,32 @@
                     </form>
                 </li>
             <% }) %>
+        </ul> -->
+        <ul>
+            <% tasks.forEach(task => { %>
+                <li class="<%= task.isCompleted() ? 'completed' : '' %>" data-priority="<%= task.priority %>">
+                    <div class="task-info">
+                        <% if (task.priority === 'Urgent') { %>
+                            <span class="urgent-badge">URGENT</span>
+                        <% } %>
+                        <%= task.getDetails() %>
+                    </div>
+                    <div class="task-actions">
+                        <form action="/complete/<%= task.getId() %>" method="POST">
+                            <button type="submit">Complete</button>
+                        </form>
+                        <form action="/delete/<%= task.getId() %>" method="POST" class="delete">
+                            <button type="submit" style="background-color: red;" 
+                                onmouseover="this.style.backgroundColor='#bd1212'"  
+                                onmouseout="this.style.backgroundColor='red'">
+                                Delete
+                            </button>
+                        </form>
+                    </div>
+                </li>
+            <% }) %>
         </ul>
+        
     </div>
 </body>
 </html>
